@@ -1,19 +1,30 @@
 <template>
   <div class="cart-wrapper">
-    <div @click="reviewOrder = false" :class="{ active : reviewOrder }" class="cart-overlay"></div>
+    <div
+      @click="reviewOrder = false"
+      :class="{ active: reviewOrder }"
+      class="cart-overlay"
+    ></div>
     <div
       :class="{
-        active : cartQuantity > 0,
-        reviewOrder : reviewOrder
+        active: cartQuantity > 0,
+        reviewOrder: reviewOrder,
       }"
       class="cart-content"
     >
-      <div :class="{ active : reviewOrder }" class="products">
+      <div :class="{ active: reviewOrder }" class="products">
         <h2>Resumo do seu pedido</h2>
         <ul class="list-group mb-3">
           <li
-            class="list-group-item d-flex align-items-center justify-content-between"
-            v-for="product in $store.state.products.filter(product => product.quantity > 0)"
+            class="
+              list-group-item
+              d-flex
+              align-items-center
+              justify-content-between
+            "
+            v-for="product in $store.state.products.filter(
+              (product) => product.quantity > 0
+            )"
             :key="product.id"
           >
             <span>{{ product.quantity }}x {{ product.name }}</span>
@@ -21,7 +32,13 @@
           </li>
           <li
             v-if="this.$store.state.deliveryFee"
-            class="list-group-item d-flex align-items-center justify-content-between text-primary"
+            class="
+              list-group-item
+              d-flex
+              align-items-center
+              justify-content-between
+              text-primary
+            "
           >
             <span>Taxa de entrega</span>
             <span>R$ {{ this.$store.state.deliveryFee }}</span>
@@ -30,7 +47,7 @@
 
         <h2>Forma de pagamento</h2>
         <div class="form-group">
-          <select v-model="paymentMethod" class="custom-select">
+          <select v-model="paymentMethod" class="form-select">
             <option value selected disabled>Selecione...</option>
             <option value="money">Dinheiro</option>
             <option value="card">Cartão</option>
@@ -50,13 +67,23 @@
           <strong>R$ {{ cartTotal }}</strong>
           <div>{{ cartQuantity }} itens no carrinho</div>
         </div>
-        <button class="btn btn-outline-secondary" v-if="!reviewOrder">Ver pedido</button>
+        <button class="btn btn-outline-secondary" v-if="!reviewOrder">
+          Ver pedido
+        </button>
         <button
           class="btn btn-success"
           @click.stop="finishOrder"
           v-if="reviewOrder"
-          :disabled="!($store.state.paymentMethod && $store.state.address.cep && $store.state.address.numero)"
-        >Enviar pedido</button>
+          :disabled="
+            !(
+              $store.state.paymentMethod &&
+              $store.state.address.cep &&
+              $store.state.address.numero
+            )
+          "
+        >
+          Enviar pedido
+        </button>
       </button>
     </div>
   </div>
@@ -67,11 +94,11 @@ import UserAddress from "./UserAddress";
 
 export default {
   components: {
-    UserAddress
+    UserAddress,
   },
   data() {
     return {
-      reviewOrder: false
+      reviewOrder: false,
     };
   },
   computed: {
@@ -81,7 +108,7 @@ export default {
       },
       set(value) {
         this.$store.commit("updatePaymentMethod", value);
-      }
+      },
     },
     paymentChange: {
       get() {
@@ -89,7 +116,7 @@ export default {
       },
       set(value) {
         this.$store.commit("updatePaymentChange", value);
-      }
+      },
     },
     cartQuantity() {
       return this.$store.state.products.reduce(
@@ -104,17 +131,17 @@ export default {
           0
         ) + this.$store.state.deliveryFee
       );
-    }
+    },
   },
   methods: {
     finishOrder() {
-      const phoneNumber = 5531971750301;
+      const phoneNumber = 5531993942423;
       let order = "*Olá! Este é o meu pedido:*\n\n";
 
       order =
         order +
         this.$store.state.products
-          .filter(product => product.quantity > 0)
+          .filter((product) => product.quantity > 0)
           .reduce(
             (acc, product) =>
               acc +
@@ -140,16 +167,17 @@ export default {
         }
       }
 
-      // console.log(order);
-      order = encodeURI(order);
+      console.log(order);
 
       if (process.isClient) {
-        let url = `http://api.whatsapp.com/send?phone=${phoneNumber}&text=${order}`;
+        let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
+          order
+        )}`;
         const win = window.open(url, "_blank");
         win.focus();
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

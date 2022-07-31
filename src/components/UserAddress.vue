@@ -33,13 +33,13 @@ import axios from "axios";
 export default {
   data() {
     return {
-      cep: ""
+      cep: "",
     };
   },
   watch: {
     cep() {
       this.buscaCep();
-    }
+    },
   },
   computed: {
     logradouro: {
@@ -48,7 +48,7 @@ export default {
       },
       set(value) {
         this.$store.commit("updateAddress", { logradouro: value });
-      }
+      },
     },
     numero: {
       get() {
@@ -56,7 +56,7 @@ export default {
       },
       set(value) {
         this.$store.commit("updateAddress", { numero: value });
-      }
+      },
     },
     complemento: {
       get() {
@@ -64,7 +64,7 @@ export default {
       },
       set(value) {
         this.$store.commit("updateAddress", { complemento: value });
-      }
+      },
     },
     bairro: {
       get() {
@@ -72,8 +72,8 @@ export default {
       },
       set(value) {
         this.$store.commit("updateAddress", { bairro: value });
-      }
-    }
+      },
+    },
   },
   methods: {
     buscaCep() {
@@ -92,35 +92,35 @@ export default {
 
           this.$store.commit("updateAddress", data);
 
-          const params = {
-            origins: `${data.logradouro} ${data.bairro} ${data.localidade}`,
-            destinations: `Rua São Manoel, Água Fresca, Itabira`,
-            mode: "driving",
-            language: "pt-BR",
-          };
+          // const params = {
+          //   origins: `${data.logradouro} ${data.bairro} ${data.localidade}`,
+          //   destinations: `Rua São Manoel, Água Fresca, Itabira`,
+          //   mode: "driving",
+          //   language: "pt-BR",
+          // };
 
-          const queryString = encodeURI(
-            Object.keys(params)
-              .map(key => key + "=" + params[key])
-              .join("&")
-          );
+          // const queryString = encodeURI(
+          //   Object.keys(params)
+          //     .map(key => key + "=" + params[key])
+          //     .join("&")
+          // );
 
           // const mapsApi = `https://maps.googleapis.com/maps/api/distancematrix/json?${queryString}`;
 
-          axios
-            .get(
-              `https://casaburguer.estoqueintegrado.com.br/distance?${queryString}`
-            )
-            .then(({ data }) => {
-              const distance = data.rows[0].elements[0].distance.value;
-              const deliveryFee = Math.round(distance * 0.0025) / 2;
-              this.$store.state.deliveryFee = deliveryFee;
-            });
+          // axios
+          //   .get(
+          //     `https://casaburguer.estoqueintegrado.com.br/distance?${queryString}`
+          //   )
+          //   .then(({ data }) => {
+          //     const distance = data.rows[0].elements[0].distance.value;
+          //     const deliveryFee = Math.round(distance * 0.0025) / 2;
+          //     this.$store.state.deliveryFee = deliveryFee;
+          //   });
         })
-        .catch(error => {
+        .catch((error) => {
           alert("Falha ao buscar CEP. Por favor, digite manualmente.");
         });
-    }
-  }
+    },
+  },
 };
 </script>

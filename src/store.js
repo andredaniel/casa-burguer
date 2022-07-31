@@ -4,32 +4,35 @@ export default {
       {
         id: 1,
         category: 1,
-        description: "140g de bife de acém, creme de catupiry, bacon em cubos, tomate, molho barbecue e porção de batata.",
-        name: "Casa Burguer",
+        description:
+          "140g de bife de acém, creme de catupiry, bacon em cubos, tomate, molho barbecue e porção de batata.",
+        name: "Jack Burguer",
         price: 18,
         quantity: 0,
         showDetails: false,
-        src: "casa-burguer.png",
+        src: "jack-burguer.png"
       },
       {
         id: 2,
         category: 1,
-        description: "140g de bife de acém, creme de cheddar, bacon em cubos, tomate, molho barbecue e porção de batata.",
+        description:
+          "140g de bife de acém, creme de cheddar, bacon em cubos, tomate, molho barbecue e porção de batata.",
         name: "Cheddar Burguer",
         price: 18,
         quantity: 0,
         showDetails: false,
-        src: "cheddar-burguer.png",
+        src: "cheddar-burguer.png"
       },
       {
         id: 3,
         category: 1,
-        description: "140g de bife de acém, fatias de banana, bacon em cubos, tomate, molho barbecue e porção de batata.",
+        description:
+          "140g de bife de acém, fatias de banana, bacon em cubos, tomate, molho barbecue e porção de batata.",
         name: "Banana Burguer",
         price: 18,
         quantity: 0,
         showDetails: false,
-        src: "banana-burguer.png",
+        src: "banana-burguer.png"
       },
       {
         id: 4,
@@ -39,7 +42,7 @@ export default {
         price: 8,
         quantity: 0,
         showDetails: false,
-        src: null,
+        src: null
       },
       {
         id: 5,
@@ -49,7 +52,7 @@ export default {
         price: 8,
         quantity: 0,
         showDetails: false,
-        src: null,
+        src: null
       },
       {
         id: 6,
@@ -59,7 +62,7 @@ export default {
         price: 4,
         quantity: 0,
         showDetails: false,
-        src: null,
+        src: null
       },
       {
         id: 7,
@@ -69,8 +72,8 @@ export default {
         price: 4,
         quantity: 0,
         showDetails: false,
-        src: null,
-      },
+        src: null
+      }
     ],
     address: {
       numero: "",
@@ -78,7 +81,7 @@ export default {
     },
     paymentMethod: null,
     paymentChange: null,
-    deliveryFee: 0,
+    deliveryFee: 7
   },
   mutations: {
     decreaseQuantity(state, product) {

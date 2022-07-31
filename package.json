@@ -1,5 +1,5 @@
 {
-  "name": "casaburguer",
+  "name": "jackburguer",
   "private": true,
   "scripts": {
     "build": "gridsome build",

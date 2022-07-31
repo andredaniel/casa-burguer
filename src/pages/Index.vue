@@ -1,7 +1,7 @@
 <template>
   <Layout class="app">
     <div class="container">
-      <g-image src="~/assets/images/logo-casa-burguer.png" class="brand" />
+      <g-image src="~/assets/images/logo-jack-burguer.svg" class="brand" />
 
       <h2>Lanches</h2>
       <Products :category="1" />
@@ -20,7 +20,7 @@ import Cart from "../components/Cart";
 
 export default {
   metaInfo: {
-    title: "Casa Burguer",
+    title: "Jack Burguer",
   },
   components: {
     Products,
@@ -31,16 +31,16 @@ export default {
 
 <style lang="scss" scoped>
 .app {
-  background-color: #222;
+  background-color: #43006a;
   min-height: 100vh;
   padding: 20px 0 60px;
 }
 
 .brand {
   display: block;
-  height: 120px;
-  margin: 0 auto;
-  width: 120px;
+  height: auto;
+  margin: 30px auto 0;
+  width: 200px;
 }
 
 h2 {
