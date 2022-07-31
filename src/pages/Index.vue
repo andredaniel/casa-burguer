@@ -4,10 +4,10 @@
       <g-image src="~/assets/images/logo-casa-burguer.png" class="brand" />
 
       <h2>Lanches</h2>
-      <products :category="1" />
+      <Products :category="1" />
 
       <h2>BEBIDAS</h2>
-      <products :category="2" />
+      <Products :category="2" />
     </div>
 
     <Cart />
@@ -20,12 +20,12 @@ import Cart from "../components/Cart";
 
 export default {
   metaInfo: {
-    title: "Casa Burguer"
+    title: "Casa Burguer",
   },
   components: {
     Products,
-    Cart
-  }
+    Cart,
+  },
 };
 </script>
 
