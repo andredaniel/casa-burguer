@@ -20,7 +20,7 @@ import Cart from "../components/Cart";
 
 export default {
   metaInfo: {
-    title: "Jack Burguer",
+    title: "Cardápio",
   },
   components: {
     Products,
