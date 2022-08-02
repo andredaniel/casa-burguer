@@ -28,7 +28,14 @@
             :key="product.id"
           >
             <span>{{ product.quantity }}x {{ product.name }}</span>
-            <span>R$ {{ product.quantity * product.price }}</span>
+            <span>
+              {{
+                (product.quantity * product.price).toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })
+              }}</span
+            >
           </li>
           <li
             v-if="this.$store.state.deliveryFee"
@@ -41,17 +48,33 @@
             "
           >
             <span>Taxa de entrega</span>
-            <span>R$ {{ this.$store.state.deliveryFee }}</span>
+            <span>
+              {{
+                this.$store.state.deliveryFee.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })
+              }}</span
+            >
           </li>
         </ul>
 
         <h2>Forma de pagamento</h2>
         <div class="form-group">
-          <select v-model="paymentMethod" class="form-select">
+          <select
+            v-model="paymentMethod"
+            class="form-select"
+            style="margin-bottom: 5px"
+          >
             <option value selected disabled>Selecione...</option>
-            <option value="money">Dinheiro</option>
+            <option value="pix">PIX</option>
             <option value="card">Cartão</option>
+            <option value="money">Dinheiro</option>
           </select>
+        </div>
+
+        <div v-if="$store.state.paymentMethod === 'pix'" class="text-primary">
+          Chave PIX: <span>brunorochaepc@gmail.com</span>
         </div>
 
         <div class="form-group" v-if="$store.state.paymentMethod === 'money'">
@@ -64,7 +87,12 @@
       </div>
       <button @click="reviewOrder = !reviewOrder" class="cart-resume">
         <div class="resume">
-          <strong>R$ {{ cartTotal }}</strong>
+          <strong>{{
+            cartTotal.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })
+          }}</strong>
           <div>{{ cartQuantity }} itens no carrinho</div>
         </div>
         <button class="btn btn-outline-secondary" v-if="!reviewOrder">
@@ -158,7 +186,9 @@ export default {
         address.complemento ? "- " + address.complemento : ""
       } - ${address.bairro}\n\n`;
 
-      if (this.$store.state.paymentMethod === "card") {
+      if (this.$store.state.paymentMethod === "pix") {
+        order = `${order}🤑 Vou pagar com PIX`;
+      } else if (this.$store.state.paymentMethod === "card") {
         order = `${order}💳 Vou pagar com cartão`;
       } else {
         order = `${order}💵 Vou pagar em dinheiro`;
@@ -166,8 +196,6 @@ export default {
           order = `${order} e preciso de troco para R$ ${this.$store.state.paymentChange}`;
         }
       }
-
-      console.log(order);
 
       if (process.isClient) {
         let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
@@ -222,7 +250,7 @@ h2 {
   left: 0;
   max-height: 60px;
   overflow: hidden;
-  padding: 10px;
+  padding: 15px;
   position: fixed;
   right: 0;
   transform: translateY(100%);
