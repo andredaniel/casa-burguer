@@ -5,51 +5,53 @@ export default {
         id: 1,
         category: 1,
         description:
-          "140g de bife de acém, creme de catupiry, bacon em cubos, tomate, molho barbecue e porção de batata.",
-        name: "Jack Burguer",
-        price: 18,
+          "Pão de brioche, Bife Artesanal 160g, Creme Cheddar, Picles, Molho especial Jack",
+        name: "Pic Burguer",
+        price: 25,
         quantity: 0,
         showDetails: false,
-        src: "jack-burguer.png"
+        src: null
       },
       {
         id: 2,
         category: 1,
         description:
-          "140g de bife de acém, creme de cheddar, bacon em cubos, tomate, molho barbecue e porção de batata.",
-        name: "Cheddar Burguer",
-        price: 18,
+          "Pão de brioche, Bife Artesanal 160g, Creme de catupiry, Bacon, Molho Especial Jack",
+        name: "Jack Burguer",
+        price: 25,
         quantity: 0,
         showDetails: false,
-        src: "cheddar-burguer.png"
+        src: null
       },
       {
         id: 3,
         category: 1,
         description:
-          "140g de bife de acém, fatias de banana, bacon em cubos, tomate, molho barbecue e porção de batata.",
-        name: "Banana Burguer",
-        price: 18,
+          "Pão de brioche, Bife Artesanal 160g, Creme de cheddar, Bacon, Molho Especial Jack",
+        name: "Cheddar Burguer",
+        price: 25,
         quantity: 0,
         showDetails: false,
-        src: "banana-burguer.png"
+        src: null
       },
       {
         id: 4,
-        category: 2,
-        description: "Refrigerante de 1,5L",
-        name: "Coca-Cola - 1,5L",
-        price: 8,
+        category: 1,
+        description:
+          "Pão de Brioche, Bife Artesanal 160g, Cebola roxa, Bacon em fatias, Creme de cheddar, Molho Especial Jack",
+        name: "Onion Burguer",
+        price: 28,
         quantity: 0,
         showDetails: false,
         src: null
       },
       {
         id: 5,
-        category: 2,
-        description: "Refrigerante de 1,5L",
-        name: "Guaraná Antarctica - 1,5L",
-        price: 8,
+        category: 1,
+        description:
+          "Pão de Brioche, Bife Artesanal 160g, Bacon em fatias, Banana Caramelizada, Creme de Catupiry",
+        name: "Banana Burguer",
+        price: 25,
         quantity: 0,
         showDetails: false,
         src: null
@@ -57,9 +59,19 @@ export default {
       {
         id: 6,
         category: 2,
+        description: "Refrigerante de 600ml",
+        name: "Coca-Cola - 600ml",
+        price: 7.5,
+        quantity: 0,
+        showDetails: false,
+        src: null
+      },
+      {
+        id: 8,
+        category: 2,
         description: "Refrigerante de 350ml",
         name: "Coca-Cola Lata - 350ml",
-        price: 4,
+        price: 5,
         quantity: 0,
         showDetails: false,
         src: null
@@ -67,9 +79,9 @@ export default {
       {
         id: 7,
         category: 2,
-        description: "Refrigerante de 350ml",
-        name: "Guaraná Antarctica Lata - 350ml",
-        price: 4,
+        description: "Refrigerante de 600ml",
+        name: "Guaraná Antarctica - 600ml",
+        price: 6.5,
         quantity: 0,
         showDetails: false,
         src: null

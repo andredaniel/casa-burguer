@@ -4,7 +4,9 @@
       <div
         class="product"
         @click="product.showDetails = !product.showDetails"
-        v-for="product in $store.state.products.filter(product => product.category === category)"
+        v-for="product in $store.state.products.filter(
+          (product) => product.category === category
+        )"
         :key="product.id"
       >
         <g-image
@@ -14,13 +16,33 @@
         />
         <div v-else class="card text-center">
           <div class="card-header">{{ product.name }}</div>
-          <div class="card-body pb-5 mb-5">{{ product.description }}</div>
+          <div class="card-body pb-5 mb-5">
+            <div>{{ product.description }}</div>
+            <div class="price">
+              {{
+                product.price.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })
+              }}
+            </div>
+          </div>
         </div>
-        <div class="description" v-if="product.description && product.showDetails && product.src">
+        <div
+          class="description"
+          v-if="product.description && product.showDetails && product.src"
+        >
           <div>
             {{ product.description }}
             <hr />
-            <div class="price">R$ {{ product.price }}</div>
+            <div class="price">
+              {{
+                product.price.toLocaleString("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                })
+              }}
+            </div>
           </div>
         </div>
         <product-quantity :product="product" />
@@ -38,7 +60,7 @@ export default {
   props: ["category"],
   components: {
     VueSlickCarousel,
-    ProductQuantity
+    ProductQuantity,
   },
   data() {
     return {
@@ -49,10 +71,10 @@ export default {
         infinite: false,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
-      }
+        slidesToScroll: 1,
+      },
     };
-  }
+  },
 };
 </script>
 
@@ -60,6 +82,10 @@ export default {
 .products-wrapper {
   margin-top: 30px;
   position: relative;
+}
+
+.price {
+  font-weight: bold;
 }
 
 .product-slider {
