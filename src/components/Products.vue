@@ -95,6 +95,11 @@ export default {
     position: relative;
     margin-bottom: 20px;
 
+    img {
+      min-height: 350px;
+      object-fit: cover;
+    }
+
     .description {
       align-items: center;
       background-color: rgba(white, 0.8);

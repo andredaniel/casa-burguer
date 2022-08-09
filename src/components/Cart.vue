@@ -163,7 +163,7 @@ export default {
   },
   methods: {
     finishOrder() {
-      const phoneNumber = 5531993942423;
+      const phoneNumber = 553171093627;
       let order = "*Olá! Este é o meu pedido:*\n\n";
 
       order =
