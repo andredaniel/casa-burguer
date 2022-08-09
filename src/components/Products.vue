@@ -33,7 +33,8 @@
           v-if="product.description && product.showDetails && product.src"
         >
           <div>
-            {{ product.description }}
+            <strong>{{ product.name }}</strong>
+            <p>{{ product.description }}</p>
             <hr />
             <div class="price">
               {{
@@ -108,11 +109,20 @@ export default {
       font-size: 17px;
       font-weight: bold;
       left: 0;
-      padding: 25px;
+      padding: 25px 25px 75px 25px;
       position: absolute;
       right: 0;
       text-align: center;
       top: 0;
+
+      strong {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-weight: normal;
+      }
     }
   }
 }
