@@ -4,21 +4,55 @@
       <div
         class="product"
         @click="product.showDetails = !product.showDetails"
-        v-for="product in $store.state.products.filter(
+        v-for="(product, key) in $store.state.products.filter(
           (product) => product.category === category
         )"
-        :key="product.id"
+        :key="key"
       >
-        <g-image
-          v-if="product.src"
-          :src="require('!!assets-loader?!~/assets/images/' + product.src)"
-          class="img-fluid"
-        />
-        <div v-else class="card text-center">
-          <div class="card-header">{{ product.name }}</div>
-          <div class="card-body pb-5 mb-5">
-            <div>{{ product.description }}</div>
-            <div class="price">
+        <div class="product-wrapper">
+          <g-image
+            v-if="product.src"
+            :src="require('!!assets-loader?!~/assets/images/' + product.src)"
+            class="img-fluid"
+          />
+          <div v-else class="card text-center">
+            <div class="card-header">{{ product.name }}</div>
+            <div class="card-body pb-5 mb-5">
+              <div>{{ product.description }}</div>
+              <div class="price">
+                {{
+                  product.price.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </div>
+            </div>
+          </div>
+          <div
+            class="description"
+            v-if="product.description && product.showDetails && product.src"
+          >
+            <div>
+              <strong>{{ product.name }}</strong>
+              <p>{{ product.description }}</p>
+              <hr />
+              <div class="price">
+                {{
+                  product.price.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </div>
+            </div>
+          </div>
+          <product-quantity :product="product" />
+        </div>
+        <div class="product-details">
+          <div class="product-grid">
+            <div class="product-name">{{ product.name }}</div>
+            <div class="product-price">
               {{
                 product.price.toLocaleString("pt-br", {
                   style: "currency",
@@ -27,26 +61,8 @@
               }}
             </div>
           </div>
+          <div class="product-description">{{ product.description }}</div>
         </div>
-        <div
-          class="description"
-          v-if="product.description && product.showDetails && product.src"
-        >
-          <div>
-            <strong>{{ product.name }}</strong>
-            <p>{{ product.description }}</p>
-            <hr />
-            <div class="price">
-              {{
-                product.price.toLocaleString("pt-br", {
-                  style: "currency",
-                  currency: "BRL",
-                })
-              }}
-            </div>
-          </div>
-        </div>
-        <product-quantity :product="product" />
       </div>
     </div>
   </div>
@@ -91,14 +107,43 @@ export default {
 
 .product-slider {
   .product {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+
+    .product-wrapper {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-details {
+      color: white;
+      padding-top: 20px;
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+      }
+
+      .product-name {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .product-description {
+        opacity: 0.7;
+        margin: 10px 0;
+      }
+
+      .product-price {
+        font-weight: bold;
+      }
+    }
 
     img {
       min-height: 350px;
       object-fit: cover;
+      width: 100%;
     }
 
     .description {
@@ -114,6 +159,10 @@ export default {
       right: 0;
       text-align: center;
       top: 0;
+
+      div {
+        width: 100%;
+      }
 
       strong {
         display: block;

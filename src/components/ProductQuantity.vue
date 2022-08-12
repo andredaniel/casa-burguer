@@ -1,14 +1,24 @@
 <template>
   <div class="product-quantity">
-    <button class="button minus" @click.stop="$store.commit('decreaseQuantity', product)">-</button>
+    <button
+      class="button minus"
+      @click.stop="$store.commit('decreaseQuantity', product)"
+    >
+      -
+    </button>
     <div class="quantity">{{ product.quantity }}</div>
-    <button class="button plus" @click.stop="$store.commit('increaseQuantity', product)">+</button>
+    <button
+      class="button plus"
+      @click.stop="$store.commit('increaseQuantity', product)"
+    >
+      +
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["product"]
+  props: ["product"],
 };
 </script>
 
