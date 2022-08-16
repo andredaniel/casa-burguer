@@ -60,15 +60,15 @@ export default {
         price: 28,
         src: "cheddar-burguer.png"
       },
-      {
-        category: 3,
-        ...base,
-        description:
-          "Double Smash Burguer + Fritas + Refrigerante Lata 350ml",
-        name: "Combo Double Smash Burguer",
-        price: 28,
-        src: "double-smash.jpeg"
-      },
+      // {
+      //   category: 3,
+      //   ...base,
+      //   description:
+      //     "Double Smash Burguer + Fritas + Refrigerante Lata 350ml",
+      //   name: "Combo Double Smash Burguer",
+      //   price: 28,
+      //   src: "double-smash.jpeg"
+      // },
       {
         category: 1,
         ...base,
