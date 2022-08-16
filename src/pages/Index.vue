@@ -3,6 +3,9 @@
     <div class="container">
       <g-image src="~/assets/images/logo-jack-burguer.svg" class="brand" />
 
+      <h2>Combos</h2>
+      <Products :category="3" />
+
       <h2>Lanches</h2>
       <Products :category="1" />
 

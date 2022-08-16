@@ -7,6 +7,69 @@ export default {
   state: {
     products: [
       {
+        category: 3,
+        ...base,
+        description:
+          "Pic Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Pic Burguer",
+        price: 28,
+        src: "pic-burguer.jpeg"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Jack Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Jack Burguer",
+        price: 28,
+        src: "jack-burguer.jpeg"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Onion Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Onion Burguer",
+        price: 28,
+        src: "onion-burguer.jpeg"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Banana Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Banana Burguer",
+        price: 28,
+        src: "banana-burguer.jpeg"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Smash Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Smash Burguer",
+        price: 28,
+        src: "smash-burguer.jpeg"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Cheddar Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Cheddar Burguer",
+        price: 28,
+        src: "cheddar-burguer.png"
+      },
+      {
+        category: 3,
+        ...base,
+        description:
+          "Double Smash Burguer + Fritas + Refrigerante Lata 350ml",
+        name: "Combo Double Smash Burguer",
+        price: 28,
+        src: "double-smash.jpeg"
+      },
+      {
         category: 1,
         ...base,
         description:
@@ -22,7 +85,7 @@ export default {
           "Pão de brioche, Bife Artesanal 160g, Creme de catupiry, Bacon, Molho Especial Jack",
         name: "Jack Burguer",
         price: 25,
-        src: "jack-burguer.png"
+        src: "jack-burguer.jpeg"
       },
       {
         category: 1,
@@ -40,7 +103,7 @@ export default {
           "Pão de Brioche, Bife Artesanal 160g, Bacon em fatias, Banana Caramelizada, Creme de Catupiry",
         name: "Banana Burguer",
         price: 25,
-        src: "banana-burguer.png"
+        src: "banana-burguer.jpeg"
       },
       {
         category: 1,

@@ -27,12 +27,12 @@ export default {
   align-items: center;
   background-color: #fff;
   border-radius: 50px;
-  bottom: 20px;
+  bottom: 15px;
   display: grid;
-  font-size: 20px;
+  font-size: 15px;
   grid-template-columns: auto 1fr auto;
   left: 50%;
-  padding: 10px;
+  padding: 5px;
   position: absolute;
   text-align: center;
   transform: translateX(-50%);
@@ -48,9 +48,9 @@ export default {
   border-radius: 50px;
   border: none;
   display: flex;
-  height: 40px;
+  height: 30px;
   justify-content: space-around;
-  width: 40px;
+  width: 30px;
 
   &:focus {
     outline: none;

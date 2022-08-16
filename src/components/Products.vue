@@ -10,11 +10,22 @@
         :key="key"
       >
         <div class="product-wrapper">
-          <g-image
-            v-if="product.src"
-            :src="require('!!assets-loader?!~/assets/images/' + product.src)"
-            class="img-fluid"
-          />
+          <div v-if="product.src" :class="product.category === 3 ? 'image-wrapper' : ''">
+            <g-image
+              :src="require('!!assets-loader?!~/assets/images/' + product.src)"
+              class="img-fluid"
+            />
+            <g-image
+              :src="require('!!assets-loader?!~/assets/images/jack-fries.jpeg')"
+              v-if="product.category === 3"
+              class="img-fluid"
+            />
+            <g-image
+              :src="require('!!assets-loader?!~/assets/images/coca-cola-lata.jpeg')"
+              v-if="product.category === 3"
+              class="img-fluid"
+            />
+          </div>
           <div v-else class="card text-center">
             <div class="card-header">{{ product.name }}</div>
             <div class="card-body pb-5 mb-5">
@@ -144,6 +155,19 @@ export default {
       min-height: 350px;
       object-fit: cover;
       width: 100%;
+    }
+
+    .image-wrapper {
+      display: flex;
+
+      img {
+        width: 25%;
+        min-height: 200px;
+      }
+
+      img:first-child {
+        width: 50%;
+      }
     }
 
     .description {
