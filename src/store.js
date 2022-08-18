@@ -12,7 +12,7 @@ export default {
         description:
           "Pic Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Pic Burguer",
-        price: 28,
+        price: 33,
         src: "pic-burguer.jpeg"
       },
       {
@@ -21,7 +21,7 @@ export default {
         description:
           "Jack Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Jack Burguer",
-        price: 28,
+        price: 33,
         src: "jack-burguer.jpeg"
       },
       {
@@ -30,7 +30,7 @@ export default {
         description:
           "Onion Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Onion Burguer",
-        price: 28,
+        price: 33,
         src: "onion-burguer.jpeg"
       },
       {
@@ -39,7 +39,7 @@ export default {
         description:
           "Banana Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Banana Burguer",
-        price: 28,
+        price: 33,
         src: "banana-burguer.jpeg"
       },
       {
@@ -48,7 +48,7 @@ export default {
         description:
           "Smash Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Smash Burguer",
-        price: 28,
+        price: 33,
         src: "smash-burguer.jpeg"
       },
       {
@@ -57,7 +57,7 @@ export default {
         description:
           "Cheddar Burguer + Fritas + Refrigerante Lata 350ml",
         name: "Combo Cheddar Burguer",
-        price: 28,
+        price: 33,
         src: "cheddar-burguer.png"
       },
       // {
