@@ -74,7 +74,7 @@
         </div>
 
         <div v-if="$store.state.paymentMethod === 'pix'" class="text-primary">
-          Chave PIX: <span>brunorochaepc@gmail.com</span>
+          Chave PIX: <span>jackburgueritabira@gmail.com</span>
         </div>
 
         <div class="form-group" v-if="$store.state.paymentMethod === 'money'">

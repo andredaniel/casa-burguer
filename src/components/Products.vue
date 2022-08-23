@@ -30,9 +30,26 @@
             <div class="card-header">{{ product.name }}</div>
             <div class="card-body pb-5 mb-5">
               <div>{{ product.description }}</div>
-              <div class="price">
-                {{
+              <div class="price" v-if="weekDay == 3 && product.category === 3">
+                <s>
+                  De: {{
+                    product.price.toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })
+                  }}
+                </s>
+
+                Por: {{
                   (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </div>
+              <div class="price" v-else>
+                {{
+                  product.price.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })
@@ -48,9 +65,26 @@
               <strong>{{ product.name }}</strong>
               <p>{{ product.description }}</p>
               <hr />
-              <div class="price">
-                {{
+              <div class="price" v-if="weekDay == 3 && product.category === 3">
+                <s>
+                  De: {{
+                    product.price.toLocaleString("pt-br", {
+                      style: "currency",
+                      currency: "BRL",
+                    })
+                  }}
+                </s>
+
+                Por: {{
                   (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </div>
+              <div class="price" v-else>
+                {{
+                  product.price.toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })
@@ -63,14 +97,31 @@
         <div class="product-details">
           <div class="product-grid">
             <div class="product-name">{{ product.name }}</div>
-            <div class="product-price">
-              {{
+            <div class="price" v-if="weekDay == 3 && product.category === 3">
+              <s>
+                De: {{
+                  product.price.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </s>
+
+              Por: {{
                 (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
                   style: "currency",
                   currency: "BRL",
                 })
               }}
             </div>
+            <div class="price" v-else>
+                {{
+                  product.price.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  })
+                }}
+              </div>
           </div>
           <div class="product-description">{{ product.description }}</div>
         </div>
@@ -116,6 +167,12 @@ export default {
 
 .price {
   font-weight: bold;
+
+  s {
+    font-weight: normal;
+    opacity: 0.8;
+    margin-right: 10px;
+  }
 }
 
 .product-slider {
