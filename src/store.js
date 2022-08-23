@@ -10,7 +10,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Pic Burguer + Fritas + Refrigerante Lata 350ml",
+          "Pic Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Pic Burguer",
         price: 33,
         src: "pic-burguer.jpeg"
@@ -19,7 +19,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Jack Burguer + Fritas + Refrigerante Lata 350ml",
+          "Jack Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Jack Burguer",
         price: 33,
         src: "jack-burguer.jpeg"
@@ -28,7 +28,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Onion Burguer + Fritas + Refrigerante Lata 350ml",
+          "Onion Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Onion Burguer",
         price: 33,
         src: "onion-burguer.jpeg"
@@ -37,7 +37,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Banana Burguer + Fritas + Refrigerante Lata 350ml",
+          "Banana Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Banana Burguer",
         price: 33,
         src: "banana-burguer.jpeg"
@@ -46,7 +46,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Smash Burguer + Fritas + Refrigerante Lata 350ml",
+          "Smash Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Smash Burguer",
         price: 33,
         src: "smash-burguer.jpeg"
@@ -55,7 +55,7 @@ export default {
         category: 3,
         ...base,
         description:
-          "Cheddar Burguer + Fritas + Refrigerante Lata 350ml",
+          "Cheddar Burguer + Fritas + Coca-cola mini 200ml",
         name: "Combo Cheddar Burguer",
         price: 33,
         src: "cheddar-burguer.png"
@@ -64,7 +64,7 @@ export default {
       //   category: 3,
       //   ...base,
       //   description:
-      //     "Double Smash Burguer + Fritas + Refrigerante Lata 350ml",
+      //     "Double Smash Burguer + Fritas + Coca-cola mini 200ml",
       //   name: "Combo Double Smash Burguer",
       //   price: 28,
       //   src: "double-smash.jpeg"

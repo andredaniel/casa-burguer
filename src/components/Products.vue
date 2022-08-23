@@ -21,7 +21,7 @@
               class="img-fluid"
             />
             <g-image
-              :src="require('!!assets-loader?!~/assets/images/coca-cola-lata.jpeg')"
+              :src="require('!!assets-loader?!~/assets/images/coca-mini-200ml.jpeg')"
               v-if="product.category === 3"
               class="img-fluid"
             />
@@ -32,7 +32,7 @@
               <div>{{ product.description }}</div>
               <div class="price">
                 {{
-                  product.price.toLocaleString("pt-br", {
+                  (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })
@@ -50,7 +50,7 @@
               <hr />
               <div class="price">
                 {{
-                  product.price.toLocaleString("pt-br", {
+                  (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
                     style: "currency",
                     currency: "BRL",
                   })
@@ -65,7 +65,7 @@
             <div class="product-name">{{ product.name }}</div>
             <div class="product-price">
               {{
-                product.price.toLocaleString("pt-br", {
+                (weekDay == 3 ? product.price - 5 : product.price).toLocaleString("pt-br", {
                   style: "currency",
                   currency: "BRL",
                 })
@@ -80,6 +80,7 @@
 </template>
 
 <script>
+import {format} from 'date-fns';
 import VueSlickCarousel from "vue-slick-carousel";
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import ProductQuantity from "../components/ProductQuantity";
@@ -101,6 +102,7 @@ export default {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
+      weekDay: format(new Date(), 'e'),
     };
   },
 };
