@@ -21,7 +21,7 @@
               class="img-fluid"
             />
             <g-image
-              :src="require('!!assets-loader?!~/assets/images/coca-mini-200ml.jpeg')"
+              :src="require('!!assets-loader?!~/assets/images/coca-mini-250ml.jpeg')"
               v-if="product.category === 3"
               class="img-fluid"
             />
